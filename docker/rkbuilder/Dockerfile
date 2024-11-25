@@ -39,7 +39,7 @@ RUN curl https://sh.rustup.rs -sSf | \
     sh -s -- --default-toolchain ${RUST_VERSION} -y
 ENV PATH="/home/${UNAME}/.cargo/bin:${PATH}"
 RUN rustup component add rust-src && \
-    cargo install --locked --version ${BINDGEN_VERSION} bindgen && \
+    cargo install --locked --version ${BINDGEN_VERSION} bindgen-cli && \
     rustup component add rustfmt && \
     rustup component add clippy
 

@@ -10,7 +10,7 @@ MNT_BASE=/rootfs
 SEEK=3071
 PKGS="build-essential,openssh-server,sudo,curl,tar,time,less,psmisc,openssl,plymouth,file"
 ARCH=$(uname -m)
-DIST=bullseye
+DIST=bookworm
 ROOTFS_DST_DIR="/rootfs"
 ROOTFS_NAME=rootfs
 USER=user
@@ -25,7 +25,7 @@ while (("$#")); do
 		shift 2
 		;;
 	-d | --distribution)
-		# Sets the debian distribution, which defaults to bullseye right now
+		# Sets the debian distribution, which defaults to bookworm right now
 		DIST=$2
 		shift 2
 		;;
@@ -155,7 +155,7 @@ sudo rm -rf $MNT >/dev/null
 sudo mkdir -p $MNT >/dev/null
 sudo chmod 0755 $MNT >/dev/null
 
-DEBOOTSTRAP_PARAMS="--arch=$DEBARCH --include=$PKGS --components=main,contrib,non-free $DIST $MNT"
+DEBOOTSTRAP_PARAMS="--arch=$DEBARCH --include=$PKGS --components=main,contrib,non-free-firmware $DIST $MNT"
 if [ $FOREIGN = "true" ]; then
 	DEBOOTSTRAP_PARAMS="--foreign $DEBOOTSTRAP_PARAMS"
 fi

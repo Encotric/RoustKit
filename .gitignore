@@ -4,6 +4,7 @@ TODOs
 src/*.mod*
 src/.*.ko*
 src/.*.o*
+src/.Module.symvers*
 src/Module.symvers
 src/modules.order
 kernel/linux
