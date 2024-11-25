@@ -159,7 +159,7 @@ insmod /tmp/src/rust_oot.ko
 - verify that the module has been correctly loaded:
 
 ```
-dmes | grep rust_oot
+dmesg | grep rust_oot
 ...
 [   72.263075] rust_oot: loading out-of-tree module taints kernel.
 [   72.267374] rust_oot: Rust OOT sample (init)
@@ -340,7 +340,7 @@ default is placed in directory `rootfs` with name
 
 ```bash
 ls ./rootfs
-bullseye-x86_64-ext4
+bookworm-x86_64-ext4
 ```
 
 Also, by default there are two users configured in the created filesystems:
